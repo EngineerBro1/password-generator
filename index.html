@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Password Generator</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+
+        <div class="lock-icon">
+            🔐
+        </div>
+
+        <h1>Password Generator</h1>
+
+        <p>Create a strong and secure password</p>
+
+    </div>
+
+
+    <!-- Password Display -->
+    <div class="password-box">
+
+        <input
+            type="text"
+            id="password"
+            placeholder="Your Password"
+            readonly
+        >
+
+        <button
+            id="copyBtn"
+            title="Copy password"
+            aria-label="Copy password"
+        >
+            📋
+        </button>
+
+    </div>
+
+
+    <!-- Copy Message -->
+    <div id="copyMessage">
+        Password copied!
+    </div>
+
+
+    <!-- Password Length -->
+    <div class="option">
+
+        <div class="option-header">
+
+            <label for="length">
+                Password Length
+            </label>
+
+            <span id="lengthValue">
+                16
+            </span>
+
+        </div>
+
+        <input
+            type="range"
+            id="length"
+            min="4"
+            max="50"
+            value="16"
+        >
+
+    </div>
+
+
+    <!-- Character Options -->
+    <div class="options">
+
+        <label class="checkbox">
+
+            <input
+                type="checkbox"
+                id="uppercase"
+                checked
+            >
+
+            <span>
+                Include Uppercase Letters
+            </span>
+
+        </label>
+
+
+        <label class="checkbox">
+
+            <input
+                type="checkbox"
+                id="lowercase"
+                checked
+            >
+
+            <span>
+                Include Lowercase Letters
+            </span>
+
+        </label>
+
+
+        <label class="checkbox">
+
+            <input
+                type="checkbox"
+                id="numbers"
+                checked
+            >
+
+            <span>
+                Include Numbers
+            </span>
+
+        </label>
+
+
+        <label class="checkbox">
+
+            <input
+                type="checkbox"
+                id="symbols"
+                checked
+            >
+
+            <span>
+                Include Symbols
+            </span>
+
+        </label>
+
+    </div>
+
+
+    <!-- Password Strength -->
+    <div class="strength-section">
+
+        <div class="strength-header">
+
+            <span>
+                Password Strength
+            </span>
+
+            <strong id="strengthText">
+                Strong
+            </strong>
+
+        </div>
+
+
+        <div class="strength-bar">
+
+            <div id="strengthFill"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Generate Button -->
+    <button
+        id="generateBtn"
+        class="generate-btn"
+    >
+        <span>⚡</span>
+        Generate Password
+    </button>
+
+
+    <!-- Footer -->
+    <div class="footer">
+        🔒 Your password is generated locally
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body> </html>

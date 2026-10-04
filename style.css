@@ -1,0 +1,541 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Body */
+
+body {
+min-height: 100vh;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+padding: 20px;
+
+font-family: Arial, Helvetica, sans-serif;
+
+background-color: black;
+
+color: white;
+
+}
+
+/* Main Container */
+
+.container {
+width: 100%;
+max-width: 480px;
+
+padding: 30px;
+
+background-color: black;
+
+border: 1px solid dimgray;
+
+border-radius: 15px;
+
+box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.7);
+
+}
+
+/* Header */
+
+.header {
+text-align: center;
+
+margin-bottom: 25px;
+
+}
+
+.lock-icon {
+width: 65px;
+height: 65px;
+
+margin: 0 auto 15px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+background-color: black;
+
+border: 1px solid dimgray;
+
+border-radius: 50%;
+
+font-size: 30px;
+
+box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.07);
+
+}
+
+.header h1 {
+margin-bottom: 10px;
+
+font-size: 30px;
+
+color: white;
+
+}
+
+.header p {
+font-size: 15px;
+
+color: silver;
+
+}
+
+/* Password Box */
+
+.password-box {
+display: flex;
+align-items: center;
+
+gap: 10px;
+
+padding: 5px;
+
+margin-bottom: 8px;
+
+background-color: black;
+
+border: 1px solid dimgray;
+
+border-radius: 10px;
+
+transition: 0.3s;
+
+}
+
+.password-box {
+border-color: white;
+
+box-shadow:
+    0 0 15px rgba(255, 255, 255, 0.07);
+
+}
+
+.password-box input {
+flex: 1;
+
+min-width: 0;
+
+padding: 15px;
+
+border: none;
+
+outline: none;
+
+background: transparent;
+
+color: white;
+
+font-size: 15px;
+
+letter-spacing: 1px;
+
+}
+
+.password-box input::placeholder {
+color: gray;
+}
+
+/* Copy Button */
+
+#copyBtn {
+width: 45px;
+height: 45px;
+
+border: none;
+
+border-radius: 8px;
+
+background-color: white;
+
+color: black;
+
+cursor: pointer;
+
+font-size: 20px;
+
+transition: 0.2s;
+
+}
+
+#copyBtn {
+background-color: lightgray;
+
+transform: scale(1.05);
+
+}
+
+#copyBtn {
+transform: scale(0.90);
+}
+
+/* Copy Message */
+
+#copyMessage {
+height: 20px;
+
+text-align: right;
+
+font-size: 12px;
+
+color: limegreen;
+
+opacity: 0;
+
+transition: 0.3s;
+
+}
+
+#copyMessage.show {
+opacity: 1;
+}
+
+/* Password Length */
+
+.option {
+margin-top: 15px;
+
+margin-bottom: 25px;
+
+}
+
+.option-header {
+display: flex;
+
+justify-content: space-between;
+align-items: center;
+
+margin-bottom: 15px;
+
+}
+
+.option-header label {
+font-size: 15px;
+
+color: white;
+
+}
+
+#lengthValue {
+min-width: 40px;
+
+padding: 5px 10px;
+
+text-align: center;
+
+background-color: black;
+
+border: 1px solid dimgray;
+
+border-radius: 5px;
+
+color: white;
+
+font-size: 15px;
+
+}
+
+/* Range Slider */
+
+#length {
+width: 100%;
+
+height: 5px;
+
+appearance: none;
+
+background-color: dimgray;
+
+border-radius: 10px;
+
+outline: none;
+
+cursor: pointer;
+
+}
+
+#length::-webkit-slider-thumb {
+appearance: none;
+
+width: 20px;
+height: 20px;
+
+border-radius: 50%;
+
+background-color: white;
+
+border: 2px solid black;
+
+cursor: pointer;
+
+}
+
+#length::-moz-range-thumb {
+width: 20px;
+height: 20px;
+
+border-radius: 50%;
+
+background-color: white;
+
+border: 2px solid black;
+
+cursor: pointer;
+
+}
+
+/* Character Options */
+
+.options {
+display: flex;
+
+flex-direction: column;
+
+gap: 10px;
+
+margin-bottom: 30px;
+
+}
+
+.checkbox {
+display: flex;
+
+align-items: center;
+
+gap: 10px;
+
+padding: 10px;
+
+background-color: black;
+
+border: 1px solid dimgray;
+
+border-radius: 5px;
+
+cursor: pointer;
+
+transition: 0.2s;
+
+}
+
+.checkbox {
+border-color: gray;
+
+background-color: #151515;
+
+}
+
+.checkbox input {
+appearance: none;
+
+width: 20px;
+height: 20px;
+
+position: relative;
+
+background-color: black;
+
+border: 1px solid gray;
+
+border-radius: 5px;
+
+cursor: pointer;
+
+}
+
+.checkbox input {
+background-color: white;
+
+border-color: white;
+
+}
+
+.checkbox input:checked::after {
+content: "✓";
+
+position: absolute;
+
+left: 3px;
+top: -2px;
+
+color: black;
+
+font-size: 14px;
+
+font-weight: bold;
+
+}
+
+.checkbox span {
+color: lightgray;
+
+font-size: 15px;
+
+}
+
+/* Password Strength */
+
+.strength-section {
+margin-bottom: 30px;
+}
+
+.strength-header {
+display: flex;
+
+justify-content: space-between;
+align-items: center;
+
+margin-bottom: 10px;
+
+}
+
+.strength-header span {
+font-size: 15px;
+
+color: silver;
+
+}
+
+#strengthText {
+font-size: 15px;
+
+color: limegreen;
+
+text-transform: capitalize;
+
+}
+
+/* Strength Bar */
+
+.strength-bar {
+width: 100%;
+
+height: 5px;
+
+overflow: hidden;
+
+background-color: dimgray;
+
+border-radius: 10px;
+
+}
+
+#strengthFill {
+width: 100%;
+height: 100%;
+
+background-color: limegreen;
+
+border-radius: 10px;
+
+transition:
+    width 0.3s ease,
+    background-color 0.3s ease;
+
+}
+
+/* Generate Button */
+
+.generate-btn {
+width: 100%;
+
+padding: 15px;
+
+border: none;
+
+border-radius: 10px;
+
+background-color: white;
+
+color: black;
+
+font-size: 15px;
+
+font-weight: bold;
+
+cursor: pointer;
+
+transition: 0.3s;
+
+}
+
+.generate-btn {
+background-color: lightgray;
+
+transform: translateY(-2px);
+
+box-shadow:
+    0 8px 20px rgba(255, 255, 255, 0.1);
+
+}
+
+.generate-btn {
+transform: translateY(0);
+}
+
+.generate-btn span {
+margin-right: 5px;
+}
+
+/* Footer */
+
+.footer {
+margin-top: 20px;
+
+padding-top: 15px;
+
+text-align: center;
+
+border-top: 1px solid dimgray;
+
+font-size: 13px;
+
+color: gray;
+
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+
+body {
+    padding: 12px;
+}
+
+
+.container {
+    padding: 22px;
+
+    border-radius: 14px;
+}
+
+
+.header h1 {
+    font-size: 24px;
+}
+
+
+.header p {
+    font-size: 13px;
+}
+
+
+.password-box input {
+    font-size: 14px;
+}
+
+
+.checkbox {
+    padding: 10px;
+}
+
+}
